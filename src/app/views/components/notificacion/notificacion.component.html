@@ -1,0 +1,46 @@
+
+<div class="container border">
+    <div class="row " style="border-radius: 40px 0px 40px 0px; margin: 60px 20px;">
+    
+      <div class="col-2">
+        <div class="line"></div>
+      </div>
+      <div class="col-6">
+        <div class="row">  <div class="text-center  display-3">Registrar notificación</div>
+        <form class=""  style="margin-top: 70px;" [formGroup]="notificacionForm" novalidate (ngSubmit)="registrarNotificacion()">
+          <div class="row col-md-12">
+            <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+             <input type="text" class="form-control" pattern="^[a-zA-Z0-9\s]+"             
+              aria-describedby="titulo"  formControlName="titulo" maxlength="150"
+             placeholder="titulo"  id="titulo" [ngClass]="getClassField(notificacionForm, 'titulo')" autocomplete="off"
+            >           
+          </div>    
+          <div class="row col-md-12">
+            <label for="exampleFormControlInput1" class="form-label">Tipo de notificación</label>
+            <input type="email" class="form-control" id="tipoNoti" value="SMS" readonly>
+          </div>
+          <div class="row col-md-12">
+            <label for="exampleFormControlInput1" class="form-label">Empleado</label>
+            <input type="email" class="form-control" id="empleado" value="Juan Lopez" readonly>
+          </div>
+          <div class="row col-md-12">
+            <label for="exampleFormControlInput1" class="form-label">Región</label>
+            <input type="email" class="form-control" id="region" value="Sur" readonly>
+          </div>
+       
+          <div class="row col-md-12 ">
+            <div class="col-12 d-grid gap-2">
+              <button type="submit" class="btn btn-success form-control"  
+              [disabled]="!notificacionForm.valid"  >
+          
+                <i class="bi bi-box-arrow-in-right"></i> Registrar
+              </button>
+            </div>
+          </div>
+        </form>   
+        
+      </div>
+    </div>
+  </div>
+  </div>
+  
